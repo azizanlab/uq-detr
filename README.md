@@ -5,8 +5,6 @@
 *Young-Jin Park\*, Carson Sobolewski\*, and Navid Azizan*
 Massachusetts Institute of Technology
 
-(\* Equal contribution, co-first authorship)
-
 The code will be released soon. Stay tuned!
 
 ## Paper
