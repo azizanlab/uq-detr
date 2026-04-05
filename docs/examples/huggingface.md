@@ -19,7 +19,7 @@ import uq_detr
 from uq_detr import Detections, GroundTruth, select
 
 # ── Load model ──
-model_name = "facebook/detr-resnet-50"
+model_name = "SenseTime/deformable-detr"  # sigmoid + focal loss
 processor = AutoImageProcessor.from_pretrained(model_name)
 model = AutoModelForObjectDetection.from_pretrained(model_name)
 model.eval()
