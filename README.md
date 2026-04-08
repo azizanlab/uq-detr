@@ -1,8 +1,8 @@
 <div align="center">
 
-# UQ-DETR
+# Uncertainty Quantification in Detection Transformers
 
-**A lightweight Python toolkit for evaluating calibration and reliability of object detectors**
+**A lightweight Python toolkit for object-level calibration and image-level reliability evaluation**
 
 [![PyPI](https://img.shields.io/pypi/v/uq-detr)](https://pypi.org/project/uq-detr)
 [![Python](https://img.shields.io/pypi/pyversions/uq-detr)](https://pypi.org/project/uq-detr)
