@@ -31,9 +31,23 @@ D-ECE and LA-ECE achieve their optima at thresholds near 0 or 1 — since they *
 *Impact of confidence threshold on metrics (Cal-DETR on COCO). OCE identifies the practical sweet spot.*
 </div>
 
+### DETR's specialist strategy across decoder layers
+
+When the model is confident, it assigns a high confidence score to the optimal positive prediction (blue) via cross-attention across decoder layers — thus well-calibrated. The remaining optimal negative queries (red) are suppressed to near-zero confidence, even while maintaining accurate bounding boxes. When the model is uncertain, the confidence of the positive prediction stays lower, while negative queries' scores slightly increase — **the confidence gap between positive and negative predictions reflects the model's reliability**.
+
+<div align="center">
+<img src="assets/horse_reliable.svg" width="800" alt="High-reliability image: confident model assigns high score to positive, suppresses negatives">
+
+*(a) High-reliability image*
+
+<img src="assets/chair_unreliable.svg" width="800" alt="Low-reliability image: uncertain model shows smaller confidence gap">
+
+*(b) Low-reliability image*
+</div>
+
 ### Image-level reliability
 
-Pearson correlation between contrastive confidence and image-level reliability (mAP per image). Positive contrast strongly correlates with reliability; negative contrast is anti-correlated — validating the contrastive signal.
+This confidence contrast motivates our image-level UQ metric. Pearson correlation between contrastive confidence and per-image mAP: positive contrast strongly correlates with reliability; negative contrast is anti-correlated.
 
 <div align="center">
 <img src="assets/imreli_comparison.png" width="500" alt="Image-level reliability comparison">
