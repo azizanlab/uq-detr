@@ -26,7 +26,7 @@
 D-ECE and LA-ECE decrease monotonically with higher confidence thresholds, failing to capture the calibration–accuracy trade-off. **OCE** (Object-level Calibration Error) reflects the true optimum, aligning with where AP peaks.
 
 <div align="center">
-<img src="assets/fig1_threshold_vs_metrics.png" width="500" alt="Metrics vs confidence threshold on COCO (Cal-DETR)">
+<img src="assets/fig1_threshold_vs_metrics.svg" width="500" alt="Metrics vs confidence threshold on COCO (Cal-DETR)">
 
 *Metrics vs. confidence threshold on COCO val (Cal-DETR). OCE identifies the practical sweet spot.*
 </div>
