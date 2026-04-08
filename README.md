@@ -1,10 +1,53 @@
-# UQ-DETR: A lightweight Python toolkit for evaluating calibration and reliability of object detectors
+<div align="center">
 
-**Uncertainty Quantification in Detection Transformers: Object-Level Calibration and Image-Level Reliability (TPAMI 2026)**
+# UQ-DETR
+
+**A lightweight Python toolkit for evaluating calibration and reliability of object detectors**
+
+[![PyPI](https://img.shields.io/pypi/v/uq-detr)](https://pypi.org/project/uq-detr)
+[![Python](https://img.shields.io/pypi/pyversions/uq-detr)](https://pypi.org/project/uq-detr)
+[![License](https://img.shields.io/github/license/young-j-park/uq-detr)](https://github.com/young-j-park/uq-detr/blob/main/LICENSE)
+[![arXiv](https://img.shields.io/badge/arXiv-2412.01782-b31b1b.svg)](https://arxiv.org/abs/2412.01782)
+
+[📘 Documentation](https://young-j-park.github.io/uq-detr) |
+[📄 Paper (TPAMI 2026)](https://arxiv.org/abs/2412.01782) |
+[🛠️ Installation](#installation) |
+[🚀 Quick Start](#quick-start) |
+[🤔 Issues](https://github.com/young-j-park/uq-detr/issues)
+
+**Uncertainty Quantification in Detection Transformers: Object-Level Calibration and Image-Level Reliability**
 
 Young-Jin Park, Carson Sobolewski, and Navid Azizan (MIT)
 
-[[Paper]](https://arxiv.org/abs/2412.01782) | [[Documentation]](https://young-j-park.github.io/uq-detr)
+</div>
+
+## Highlight Results
+
+### Why OCE? Existing metrics miss the impact of post-processing
+
+D-ECE and LA-ECE decrease monotonically with higher confidence thresholds, failing to capture the calibration–accuracy trade-off. **OCE** (Object-level Calibration Error) reflects the true optimum, aligning with where AP peaks.
+
+<div align="center">
+<img src="assets/fig1_threshold_vs_metrics.png" width="500" alt="Metrics vs confidence threshold on COCO (Cal-DETR)">
+
+*Metrics vs. confidence threshold on COCO val (Cal-DETR). OCE identifies the practical sweet spot.*
+</div>
+
+### Object-level calibration across models
+
+OCE evaluated on optimal positive sets (confidence thresholding) vs. negative sets across 6 detectors on COCO test. Lower is better.
+
+<div align="center">
+<img src="assets/oce_comparison.png" width="500" alt="OCE comparison across detectors">
+</div>
+
+### Image-level reliability
+
+Pearson correlation between contrastive confidence and image-level reliability (mAP per image). Positive contrast strongly correlates with reliability; negative contrast is anti-correlated — validating the contrastive signal.
+
+<div align="center">
+<img src="assets/imreli_comparison.png" width="500" alt="Image-level reliability comparison">
+</div>
 
 ## Installation
 

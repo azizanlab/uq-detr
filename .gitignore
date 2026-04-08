@@ -1,6 +1,7 @@
 # Paper, generated figures, and notebooks
 arxiv_tpami.pdf
 *.png
+!assets/*.png
 notebooks/
 
 # Byte-compiled / optimized / DLL files
