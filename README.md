@@ -31,14 +31,6 @@ D-ECE and LA-ECE achieve their optima at thresholds near 0 or 1 — since they *
 *Impact of confidence threshold on metrics (Cal-DETR on COCO). OCE identifies the practical sweet spot.*
 </div>
 
-### Object-level calibration across models
-
-OCE evaluated on optimal positive sets (confidence thresholding) vs. negative sets across 6 detectors on COCO test. Lower is better.
-
-<div align="center">
-<img src="assets/oce_comparison.png" width="500" alt="OCE comparison across detectors">
-</div>
-
 ### Image-level reliability
 
 Pearson correlation between contrastive confidence and image-level reliability (mAP per image). Positive contrast strongly correlates with reliability; negative contrast is anti-correlated — validating the contrastive signal.
