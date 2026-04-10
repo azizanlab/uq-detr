@@ -25,7 +25,7 @@
 
 D-ECE and LA-ECE achieve their optima at thresholds near 0 or 1 — they can reach near-zero error by retaining only a few highly confident predictions, or by flooding the metric with near-zero confidence predictions that are trivially well-calibrated. In contrast, **OCE** (Section V-B of the paper) averages the Brier score per ground-truth object, penalizing both miscalibrated and missing detections:
 
-$$\text{OCE}_\tau(\hat{S}_\theta, Y) = \frac{1}{|Y|} \sum_{y_{l,j} \in Y} \text{Brier}_\tau(\hat{S}_\theta(x_l),\; y_{l,j})$$
+$$\text{OCE} = \text{mean}_{\\,\text{GT object}} \; \text{BrierScore}(\text{matched predictions per object}, \text{GT label})$$
 
 This yields a bell-shaped curve with its optimum around a practical threshold of ~0.3, aligning with common deployment choices.
 
@@ -55,9 +55,9 @@ When the model is uncertain, the confidence of the positive prediction stays low
 
 This confidence contrast motivates our image-level UQ metric (Section VI-B of the paper). We empirically observe that the Pearson correlation between confidence scores of optimal positives and negatives shows an inverted pattern with per-image mAP: positive contrast strongly correlates with reliability; negative contrast is anti-correlated. We propose **ContrastiveConf**:
 
-$$\text{ContrastiveConf}(x) = \text{Conf}^+(x) - \lambda\,\text{Conf}^-(x)$$
+$$\text{ContrastiveConf}(x) = \text{Conf}^+(x) - \lambda\text{Conf}^-(x)$$
 
-where $\text{Conf}^+$ and $\text{Conf}^-$ are the average max-class confidence of the positive and negative prediction sets, respectively.
+where $\text{Conf}^+$ and $\text{Conf}^-$ are the average confidence of the positive and negative prediction sets, respectively, and $\lambda$ is a scaling factor (recommended: 5.0--10.0).
 
 <div align="center">
 <img src="assets/imreli_comparison.png" width="500" alt="Image-level reliability comparison">
